@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name": "PuzzleFactory Scroll Fix",
+	"version": "1.1",
+	"description": "Удаляет класс vjul89, инлайн-стили из body и блокирует обработчики событий scroll на puzzlefactory.com.",
+	"permissions": ["scripting", "activeTab"],
+	"content_scripts": [
+		{
+			"matches": ["https://puzzlefactory.com/*"],
+			"js": ["content.js"],
+			"run_at": "document_start"
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["inject.js"],
+			"matches": ["https://puzzlefactory.com/*"]
+		}
+	],
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"96": "icon96.png"
+	}
+}
